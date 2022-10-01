@@ -13,10 +13,10 @@ inputs = [{'argname1A': arg1A, 'argname1B: arg1B}, {'argname2A': arg2A, 'argname
 - length of ```ids``` and ```inputs``` must be equal
 
 ### Run parallel tasks
-Import ray_smartpool
+Import ray_smartpool  
 ```import ray_smartpool as rsp```
 
-Initialize Ray
+Initialize Ray  
 ```
 cluster = rsp.cluster.init_ray(
     head_ip='127.0.0.1',
@@ -30,13 +30,13 @@ cluster = rsp.cluster.init_ray(
 )
 ```
 
-Initialize the worker pool
+Initialize the worker pool  
 ```pool = rsp.advanced.Master(transform_func, max_workers=8, worker_task_limit=5)```
 
-Run a list of tasks through the ray_smartpool
+Run a list of tasks through the ray_smartpool  
 ```result = pool.run(ids, inputs, func=transform_func, verbose=True)```
 
-Result format
+Result format  
 - the result is in the form of a list of dicts
 - each dict has an 'id' key with a value that identifies which task the result goes to
 - each dict has a 'result' key with the returned value from the task that was run
